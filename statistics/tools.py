@@ -14,6 +14,7 @@ def sort_distributions(input_data):
         # See https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.rv_continuous.fit.html
         # See https://www.spcforexcel.com/knowledge/basic-statistics/distribution-fitting
         shape_param = distribution.fit(input_data)
+        
         distribution_parameters[distribution_name] = shape_param
         _, pvalue = stats.kstest(input_data, distribution_name, args=shape_param)
         distribution_scoring.append((distribution_name, pvalue))

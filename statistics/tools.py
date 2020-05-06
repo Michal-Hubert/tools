@@ -2,7 +2,7 @@ import scipy.stats as stats
 
 
 # Sort distributions according to how close they are to input_data.
-# The closest one to data is the first.
+# The closest one to input_data is at the beginning.
 def sort_distributions(input_data):
     # See https://docs.scipy.org/doc/scipy/reference/stats.html
     distributions = ["exponweib", "norm", "pareto", "uniform", "logistic"]

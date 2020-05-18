@@ -1,5 +1,5 @@
 import scipy.stats as stats
-
+import numpy as np
 
 # Sort distributions according to how close they are to input_data.
 # The closest one to input_data is at the beginning.
@@ -24,8 +24,15 @@ def sort_distributions(input_data):
         print("distribution:", elem[0], " p-value:", elem[1], "parameters:", distribution_parameters[elem[0]])
 
 
+# Print confidence interval of input data
+def confidence_interval(input_data, param=0.95):
+    res = stats.t.interval(param, len(input_data) - 1, loc=np.mean(input_data), scale=stats.sem(input_data))
+    print(res)
+
+
 data = []
 for i in range(1000):
     data.append(i)
 
 sort_distributions(data)
+confidence_interval(data)

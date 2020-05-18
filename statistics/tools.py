@@ -1,6 +1,7 @@
 import scipy.stats as stats
 import numpy as np
 
+
 # Sort distributions according to how close they are to input_data.
 # The closest one to input_data is at the beginning.
 def sort_distributions(input_data):
